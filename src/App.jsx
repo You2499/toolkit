@@ -113,7 +113,7 @@ const App = () => {
 
         <footer className="mt-16 text-center">
           <p className="text-gray-600 dark:text-gray-400 mb-4">© 2024 ToolKit. All rights reserved.</p>
-          <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 dark:text-gray-500">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-500">
             <span>Made by Gagan Gupta using</span>
             <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-gray-700 dark:hover:text-gray-300">
               <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
