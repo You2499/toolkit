@@ -49,7 +49,7 @@ const App = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
       <button
         onClick={toggleDarkMode}
         className="fixed top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
@@ -66,68 +66,68 @@ const App = () => {
         )}
       </button>
 
-      <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:py-24">
-        <header className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            ToolKit
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
-            A collection of useful tools to simplify your life
-          </p>
-        </header>
+      <main className="flex-grow">
+        <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:py-24">
+          <header className="text-center mb-16">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+              ToolKit
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
+              A collection of useful tools to simplify your life
+            </p>
+          </header>
 
-        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2">
-          {apps.map((app) => (
-            <a
-              key={app.title}
-              href={app.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-6 sm:p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
-                  {app.icon}
+          <div className="grid gap-6 sm:gap-8 sm:grid-cols-2">
+            {apps.map((app) => (
+              <a
+                key={app.title}
+                href={app.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-6 sm:p-8 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                    {app.icon}
+                  </div>
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {app.title}
+                  </h2>
                 </div>
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  {app.title}
-                </h2>
-              </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                {app.description}
-              </p>
-              <div className="flex items-center text-blue-600 dark:text-blue-400">
-                <span className="text-sm font-medium">Try it now</span>
-                <svg
-                  className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <footer className="mt-16 text-center">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">© 2024 ToolKit. All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-500">
-            <span>Made by Gagan Gupta using</span>
-            <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:text-gray-700 dark:hover:text-gray-300">
-              <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13.325 3.05L8.667 20.432l1.932.518 4.658-17.382-1.932-.518zM7.612 18.36l1.932.518 2.127-7.937-1.932-.518-2.127 7.937zM16.375 8.8l-2.127 7.937 1.932.518 2.127-7.937-1.932-.518z"/>
-              </svg>
-              Cursor AI
-            </a>
-            <span>•</span>
-            <a href="https://anthropic.com/claude" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 dark:hover:text-gray-300">Claude 3.5</a>
-            <span>•</span>
-            <a href="https://openai.com/gpt-4" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 dark:hover:text-gray-300">GPT-4</a>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  {app.description}
+                </p>
+                <div className="flex items-center text-blue-600 dark:text-blue-400">
+                  <span className="text-sm font-medium">Try it now</span>
+                  <svg
+                    className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            ))}
           </div>
-        </footer>
-      </div>
+        </div>
+      </main>
+
+      <footer className="mt-auto py-8 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>© 2024 ToolKit. All rights reserved.</p>
+            <div className="mt-2 flex justify-center space-x-4">
+              <a href="https://toolkit.netlify.app" className="hover:text-gray-700 dark:hover:text-gray-300">ToolKit</a>
+              <span>•</span>
+              <a href="https://foodsplitter.netlify.app" className="hover:text-gray-700 dark:hover:text-gray-300">FoodSplitter</a>
+              <span>•</span>
+              <a href="https://grocerysplitter.netlify.app" className="hover:text-gray-700 dark:hover:text-gray-300">GrocerySplitter</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
